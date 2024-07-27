@@ -10,6 +10,7 @@ public class Homework1 {
         ex3();
         System.out.println("___________________________________________");
         ex4();
+        System.out.println("___________________________________________");
         advanced();
     }
 
@@ -82,7 +83,7 @@ public class Homework1 {
     public static void advanced() {
         //Задача №4
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите количество проданых килограм колбасы:");
+        System.out.print("Введите количество проданых килограм колбасы: ");
         int sausageSellWeight = sc.nextInt();
         //Компания Рога и Копыта производит мясные продукты.
         //Перечень производимых товаров :
@@ -100,8 +101,7 @@ public class Homework1 {
             sausageBuyPrice = BigDecimal.valueOf(412);
         }
 
-        System.out.println("Введите количество проданых килограм ветчины:");
-        sc.nextLine();
+        System.out.print("Введите количество проданых килограм ветчины: ");
         int hamSellWeight = sc.nextInt();
         //Ветчина - стоимость 350 руб
         BigDecimal hamSellPrice = new BigDecimal(350);
@@ -109,8 +109,7 @@ public class Homework1 {
         BigDecimal hamBuyPrice = new BigDecimal(275);
 
 
-        System.out.println("Введите количество проданых килограм шейки:");
-        sc.nextLine();
+        System.out.print("Введите количество проданых килограм шейки: ");
         int neckSellWeight = sc.nextInt();
         //Шейка - стоимость 500 руб
         BigDecimal neckSellPrice = new BigDecimal(500);
@@ -157,7 +156,9 @@ public class Homework1 {
         //Итоговый налог: 80_000 + 100_000 + 65_000 = 245_000
         //Прибыль после налогов: прибыль до налогов - налог.
         BigDecimal profitNet = profitGross.subtract(tax);
-        System.out.println(profitNet);
+        System.out.println("___________________________________________");
+        System.out.println("___________________________________________");
+        System.out.println("Итоговая прибыль после вычета налогов равна: " + profitNet);
         //Необходимо создать универсальную систему расчетов прибыли после налогов,
         //Т.е на вход подаются данные по количеству произведенных продуктов
         // и печатается прибыль после налогов компании
