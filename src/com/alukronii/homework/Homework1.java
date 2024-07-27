@@ -84,7 +84,7 @@ public class Homework1 {
         //Задача №4
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите количество проданых килограм колбасы: ");
-        int sausageSellWeight = sc.nextInt();
+        double sausageSellWeight = sc.nextDouble();
         //Компания Рога и Копыта производит мясные продукты.
         //Перечень производимых товаров :
         //Колбаса - стоимость(цена) 800 руб,
@@ -102,7 +102,7 @@ public class Homework1 {
         }
 
         System.out.print("Введите количество проданых килограм ветчины: ");
-        int hamSellWeight = sc.nextInt();
+        double hamSellWeight = sc.nextDouble();
         //Ветчина - стоимость 350 руб
         BigDecimal hamSellPrice = new BigDecimal(350);
         //себестоимость при производстве - 275 руб
@@ -110,7 +110,7 @@ public class Homework1 {
 
 
         System.out.print("Введите количество проданых килограм шейки: ");
-        int neckSellWeight = sc.nextInt();
+        double neckSellWeight = sc.nextDouble();
         //Шейка - стоимость 500 руб
         BigDecimal neckSellPrice = new BigDecimal(500);
         //себестоимость при производстве меньше 500кг - 311 руб
