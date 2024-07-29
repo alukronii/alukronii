@@ -82,9 +82,8 @@ public class Homework1 {
      */
     public static void advanced() {
         //Задача №4
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите количество проданых килограм колбасы: ");
-        double sausageSellWeight = sc.nextDouble();
+        int sausageSellWeight = 2000;
+        System.out.println("Количество проданных килограмм колбасы: " + sausageSellWeight + " кг");
         //Компания Рога и Копыта производит мясные продукты.
         //Перечень производимых товаров :
         //Колбаса - стоимость(цена) 800 руб,
@@ -101,16 +100,16 @@ public class Homework1 {
             sausageBuyPrice = BigDecimal.valueOf(412);
         }
 
-        System.out.print("Введите количество проданых килограм ветчины: ");
-        double hamSellWeight = sc.nextDouble();
+        int hamSellWeight = 8511;
+        System.out.println("Количество проданных килограмм ветчины: " + hamSellWeight + " кг");
         //Ветчина - стоимость 350 руб
         BigDecimal hamSellPrice = new BigDecimal(350);
         //себестоимость при производстве - 275 руб
         BigDecimal hamBuyPrice = new BigDecimal(275);
 
 
-        System.out.print("Введите количество проданых килограм шейки: ");
-        double neckSellWeight = sc.nextDouble();
+        int neckSellWeight = 6988;
+        System.out.println("Количество проданных килограмм шейки: " + neckSellWeight + " кг");
         //Шейка - стоимость 500 руб
         BigDecimal neckSellPrice = new BigDecimal(500);
         //себестоимость при производстве меньше 500кг - 311 руб
@@ -121,6 +120,7 @@ public class Homework1 {
         } else {
             neckBuyPrice = BigDecimal.valueOf(311);
         }
+        System.out.println("___________________________________________");
 
 
         //Финансовые показатели
@@ -129,26 +129,37 @@ public class Homework1 {
         BigDecimal incomeHam = hamSellPrice.multiply(BigDecimal.valueOf(hamSellWeight));
         BigDecimal incomeNeck = neckSellPrice.multiply(BigDecimal.valueOf(neckSellWeight));
         BigDecimal incomeCommon = incomeSausage.add(incomeHam).add(incomeNeck);
+        System.out.println("Доход компании составляет: " + incomeCommon + " руб");
         //Расход компании считается как умношение себестоимости на количество проданных кг + миллион рублей
         BigDecimal expenseSausage = sausageBuyPrice.multiply(BigDecimal.valueOf(sausageSellWeight));
         BigDecimal expenseHam = hamBuyPrice.multiply(BigDecimal.valueOf(hamSellWeight));
         BigDecimal expenseNeck = neckBuyPrice.multiply(BigDecimal.valueOf(neckSellWeight));
         BigDecimal expenseCommon = expenseSausage.add(expenseHam).add(expenseNeck).add(BigDecimal.valueOf(1_000_000));
+        System.out.println("Рассход компании составляет: " + expenseCommon + " руб");
         //Прибыль до налогов считается как: доход - расход
         BigDecimal profitGross = incomeCommon.subtract(expenseCommon);
+        System.out.println("___________________________________________");
+        System.out.println("Прибыль до налогов составляет: " + profitGross + " руб");
         //Налоги считаются так:
 
         // прибыль до налогов больше 2_000_000, облагается ставкой 13%
         // прибыль до налогов больше 1_000_000 до 2_000_000, облагается ставкой 10%
         // прибыль до налогов до 1_000_000 (включительно), облагается ставкой 8%
         BigDecimal tax;
-        if (profitGross.compareTo(BigDecimal.valueOf(2_000_000)) > 0) {
-            tax = profitGross.subtract(BigDecimal.valueOf(2_000_000)).multiply(BigDecimal.valueOf(0.13)).add(BigDecimal.valueOf(180_000));
-        } else if (profitGross.compareTo(BigDecimal.valueOf(1_000_000)) > 0) {
-            tax = profitGross.subtract(BigDecimal.valueOf(1_000_000)).multiply(BigDecimal.valueOf(0.10)).add(BigDecimal.valueOf(80_000));
+        int firstTaxThreshold = 1_000_000;
+        int secondTaxThreshold = 2_000_000;
+        if (profitGross.compareTo(BigDecimal.valueOf(secondTaxThreshold)) > 0) {
+            tax = profitGross.subtract(BigDecimal.valueOf(secondTaxThreshold)).multiply(BigDecimal.valueOf(0.13))
+                    .add(BigDecimal.valueOf(secondTaxThreshold-firstTaxThreshold).multiply(BigDecimal.valueOf(0.10)))
+                    .add(BigDecimal.valueOf(firstTaxThreshold).multiply(BigDecimal.valueOf(0.08)));
+        } else if (profitGross.compareTo(BigDecimal.valueOf(firstTaxThreshold)) > 0) {
+            tax = profitGross.subtract(BigDecimal.valueOf(firstTaxThreshold)).multiply(BigDecimal.valueOf(0.10))
+                    .add(BigDecimal.valueOf(firstTaxThreshold).multiply(BigDecimal.valueOf(0.08)));
         } else {
             tax = profitGross.multiply(BigDecimal.valueOf(0.08));
         }
+        System.out.println("___________________________________________");
+        System.out.println("Налог составляет: " + tax + " руб");
         //пример расчета налогов для прибыли до налогов 2_500_000:
         //1_000_000 - налог 80_000 - по ставке 8%
         //1_000_000 - налог 100_000 - по ставке 10%
@@ -156,9 +167,8 @@ public class Homework1 {
         //Итоговый налог: 80_000 + 100_000 + 65_000 = 245_000
         //Прибыль после налогов: прибыль до налогов - налог.
         BigDecimal profitNet = profitGross.subtract(tax);
-        System.out.println("___________________________________________");
-        System.out.println("___________________________________________");
-        System.out.println("Итоговая прибыль после вычета налогов равна: " + profitNet);
+        System.out.println("===========================================");
+        System.out.println("Итоговая прибыль после вычета налогов равна: " + profitNet + " руб");
         //Необходимо создать универсальную систему расчетов прибыли после налогов,
         //Т.е на вход подаются данные по количеству произведенных продуктов
         // и печатается прибыль после налогов компании
@@ -166,6 +176,5 @@ public class Homework1 {
         //Колбасы 2000кг - это произведено и продано
         //Ветчины 8511кг - это произведено и продано
         //Шейки 6988кг - это произведено и продано
-        sc.close();
     }
 }
