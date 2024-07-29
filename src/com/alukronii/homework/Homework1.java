@@ -73,7 +73,7 @@ public class Homework1 {
         //Распечатать полученный индекс
         String simply = "this is simply. This is my favorite song.";
         String simplyCorrect = simply.replace("this is", "those are");
-        System.out.println("Index of second \"o\" is: " + simplyCorrect.indexOf("o", simplyCorrect.indexOf("o") + 1));
+        System.out.println("Индекс второй буквы \"o\": " + simplyCorrect.indexOf("o", simplyCorrect.indexOf("o") + 1));
     }
 
     /**
