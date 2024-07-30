@@ -1,6 +1,7 @@
 package com.alukronii.homework;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Homework1 {
@@ -25,12 +26,15 @@ public class Homework1 {
         //1. убрать лишние пробелы,
         //2. перевести текст в верхний регистр
         String nameWithoutSpacesInUpperCase = name.trim().toUpperCase();
+        String [] nameApart = nameWithoutSpacesInUpperCase.split(" ");
+        String secondName = nameApart[0];
+        String lastThreeLettersOfSecondName = secondName.substring(secondName.length()-3);
         //3. Если содержит "ова " то печатаем на экран: Уважаемая {name}
         // Если содержит "ов " то печатаем на экран: Уважаемый {name}
         // В иных случаях печатаем на экран: Неизвестное лицо {name}
-        if (nameWithoutSpacesInUpperCase.contains("ОВА")) {
+        if (lastThreeLettersOfSecondName.contains("ОВА")) {
             System.out.println("Уважаемая " + nameWithoutSpacesInUpperCase);
-        } else if (nameWithoutSpacesInUpperCase.contains("ОВ")) {
+        } else if (lastThreeLettersOfSecondName.contains("ОВ")) {
             System.out.println("Уважаемый " + nameWithoutSpacesInUpperCase);
         } else {
             System.out.println("Неизвестное лицо " + nameWithoutSpacesInUpperCase);
