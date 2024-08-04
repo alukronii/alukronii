@@ -1,8 +1,6 @@
-package com.alukronii.homework;
+package com.alukronii.homework.homework1;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Homework1 {
     public static void main(String[] args) {

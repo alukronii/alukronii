@@ -1,4 +1,4 @@
-package com.alukronii.homework;
+package com.alukronii.homework.homework1;
 
 import java.util.Scanner;
 
