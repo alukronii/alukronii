@@ -1,27 +1,27 @@
 package com.alukronii.homework.homework2;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Homework2 {
     public static void main(String[] args) {
-        ex1();
-        ex2();
-        ex3();
+       ex1();
+       ex2();
+       ex3();
+       ex5();
     }
 
     public static void ex1() {
-        //Дан массив со словами
         String[] words = {"Это", "шашлык", "на", "шампуре"};
-        //С помощью циклов и функции String.substring составить итоговый текст
-        //Это-шашлык-на-шампуре
+        String sentence = new String();
         for (String word : words) {
-            String sentence =
+            sentence += word + "-";
         }
+        System.out.println("Итоговая строка: " + sentence.substring(0, (sentence.length()-1)));
 
     }
 
     public static void ex2() {
-        //Дан массив с массивом чисел внутри
         int[][] arrayOfNumbers = new int[10][10];
         arrayOfNumbers[0] = new int[]{131, 1, 1, 1, 1, 1, 1, 1, 1, 102};
         arrayOfNumbers[1] = new int[]{1, 20, 1, 1, 1, 1, 1, 1, 93, 1};
@@ -34,40 +34,33 @@ public class Homework2 {
         arrayOfNumbers[8] = new int[]{1, 20, 1, 1, 1, 1, 1, 1, 901, 1};
         arrayOfNumbers[9] = new int[]{10, 1, 1, 1, 1, 1, 1, 1, 1, 101};
 
-        //Посчитать сумму каждой диагонали ИСПОЛЬЗУЯ цикл(ы)
 
-
-        //С левого верхнего угла к нижнему правому
         int leftUpToRightDownSum = 0;
         int maxIndexInArray = arrayOfNumbers.length - 1;
         for (int i = 0; (i <= maxIndexInArray); i++) {
             leftUpToRightDownSum += arrayOfNumbers[i][i];
         }
-        System.out.println(leftUpToRightDownSum);
-        //С левого нижнего угла к верхнему правому
+        System.out.println("Сумма диагонали с левого верхнего угла к нижнему правому: " + leftUpToRightDownSum);
+
         int leftDownToRightUpSum = 0;
         for (int i = 0; (i <= maxIndexInArray); i++) {
             leftDownToRightUpSum += arrayOfNumbers[maxIndexInArray - i][i];
         }
-        System.out.println(leftDownToRightUpSum);
-        //Вывести на экран
+        System.out.println("Сумма диагонали с левого нижнего угла к верхнему правому: " + leftDownToRightUpSum);
     }
 
     public static void ex3() {
-        //Дан распределитель случайных чисел
         Random random = new Random(1);
-        //Получение случайного числа
         int number = random.nextInt(1000);
         for (int tryCounter = 1; number <= 1000; tryCounter++) {
             number = random.nextInt(1000);
             if (number == 999) {
-                System.out.println(tryCounter);
+                System.out.println("Число 999 выпало с " + tryCounter + " попытки");
                 break;
             }
         }
-        //Написать код, генерирующий случайные числа до тех пор, пока не сгенерируется 999.
-        //Вывести номер попытки, с которой получилось получить случайным образом число 999.
     }
+
 
     public static void ex4() {
         //Создать пакет office.
@@ -89,14 +82,13 @@ public class Homework2 {
         //Запустить рабочий день в офисе
     }
 
-    /**
-     * Для продвинутых
-     */
     public static void ex5() {
-        //Перевернуть массив(без сторонних классов,методов и стримов), не создавая новый массив.
-        // Вывести на экран.
-        //"перевернуть" - значит последние элементы становятся первыми и наоборот.
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
+        for (int i = 0; i <= (numbers.length-1)/2; i++){
+            int save = numbers[i];
+            numbers[i] = numbers[numbers.length-1-i];
+            numbers[numbers.length-1-i] = save;
+            }
+        System.out.println(Arrays.toString(numbers));
     }
 }
