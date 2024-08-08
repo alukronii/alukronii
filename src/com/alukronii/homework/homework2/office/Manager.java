@@ -10,6 +10,7 @@ public class Manager {
     public String getName() {
         return name;
     }
+
     public Manager(String name) {
         setName(name);
     }
