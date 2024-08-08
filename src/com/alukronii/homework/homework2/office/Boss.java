@@ -12,7 +12,7 @@ public class Boss {
     }
 
     public Boss(String name) {
-        this.name = name;
+        setName(name);
     }
 
     public String hurryUp (Manager managerName) {

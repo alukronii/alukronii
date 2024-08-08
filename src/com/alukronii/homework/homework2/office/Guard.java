@@ -12,7 +12,7 @@ public class Guard {
     }
 
     public Guard(String name) {
-        this.name = name;
+        setName(name);
     }
 
     public String beg () {

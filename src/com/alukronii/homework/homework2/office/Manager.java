@@ -11,7 +11,7 @@ public class Manager {
         return name;
     }
     public Manager(String name) {
-        this.name = name;
+        setName(name);
     }
 
     public String shout () {
