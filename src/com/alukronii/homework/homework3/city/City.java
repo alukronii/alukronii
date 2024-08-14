@@ -17,13 +17,14 @@ public final class City {
     public City(String cityName, House[] houses) {
         this.cityName = cityName;
         this.houses = houses;
+
     }
 
     @Override
     public String toString() {
         return "City{" +
                 "cityName='" + cityName + '\'' +
-                ", houses=" + Arrays.toString(houses) +
+                ", houses=" + Arrays.toString(houses.clone()) +
                 '}';
     }
 }

@@ -1,4 +1,4 @@
-package com.alukronii.homework.homework3.factory;
+package com.alukronii.homework.homework3.factory.phone;
 
 public class Camera {
     //Камера: умеет фотографировать. Свойство - количество мега пикселей.
@@ -10,6 +10,11 @@ public class Camera {
 
     public int getAmountOfMegapixel() {
         return amountOfMegapixel;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(amountOfMegapixel);
     }
 
     void takePhoto () {

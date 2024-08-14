@@ -1,4 +1,4 @@
-package com.alukronii.homework.homework3.factory;
+package com.alukronii.homework.homework3.factory.phone;
 
 public class Samsung extends Phone{
 

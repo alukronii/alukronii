@@ -1,4 +1,4 @@
-package com.alukronii.homework.homework3.factory;
+package com.alukronii.homework.homework3.factory.phone;
 
 public class Processor {
     //Процессор: свойство - количество вычислений в секунду (mhz)
@@ -10,5 +10,10 @@ public class Processor {
 
     public int getFrequency() {
         return frequency;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(frequency);
     }
 }
