@@ -2,22 +2,20 @@ package com.alukronii.homework.homework3.city;
 
 import java.util.Arrays;
 
-public class City implements Cloneable{
-    private String cityName;
-    private House[] houses;
+public final class City implements Cloneable{
+    private final String cityName;
+    private final House[] houses;
 
-    @Override
+
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        House cloned = (House) super.clone();
+        cloned.setStreetName((House)cloned.getStreetName().clone());
+        return cloned;
     }
 
     public City(String cityName, House[] houses) {
         this.cityName = cityName;
         this.houses = houses;
-    }
-
-    public City (City newCityCopy) throws CloneNotSupportedException {
-        this(newCityCopy.getCityName(), newCityCopy.getHouses().clone());
     }
 
     public String getCityName() {

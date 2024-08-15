@@ -1,8 +1,13 @@
 package com.alukronii.homework.homework3.city;
 
-public class House {
+public class House implements Cloneable{
     private String streetName;
     private int houseNumber;
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
     public String getStreetName() {
         return streetName;
