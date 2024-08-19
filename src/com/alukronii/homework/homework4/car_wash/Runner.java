@@ -1,5 +1,10 @@
 package com.alukronii.homework.homework4.car_wash;
 
+import com.alukronii.homework.homework4.car_wash.vehicle.Bus;
+import com.alukronii.homework.homework4.car_wash.vehicle.Car;
+import com.alukronii.homework.homework4.car_wash.vehicle.Vehicle;
+import com.alukronii.homework.homework4.car_wash.vehicle.VehicleSize;
+
 public class Runner {
     public static void main(String[] args) {
         VehicleSize carSize = new VehicleSize(5, 2, 1.8);

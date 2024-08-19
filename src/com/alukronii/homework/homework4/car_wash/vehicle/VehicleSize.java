@@ -1,4 +1,4 @@
-package com.alukronii.homework.homework4.car_wash;
+package com.alukronii.homework.homework4.car_wash.vehicle;
 
 public class VehicleSize {
     private double width;
