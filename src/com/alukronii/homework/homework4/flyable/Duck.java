@@ -3,7 +3,6 @@ package com.alukronii.homework.homework4.flyable;
 public class Duck implements FlyableInterface {
 
     private boolean isInjured;
-
     public Duck(boolean isInjured) {
         this.isInjured = isInjured;
     }

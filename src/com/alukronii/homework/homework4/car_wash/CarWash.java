@@ -6,7 +6,6 @@ public class CarWash {
     private Vehicle[] vehicle;
     private int washPrice;
     private int vehicleCount;
-
     public CarWash() {
     }
 

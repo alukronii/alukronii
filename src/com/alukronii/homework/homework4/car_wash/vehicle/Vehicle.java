@@ -3,7 +3,6 @@ package com.alukronii.homework.homework4.car_wash.vehicle;
 public abstract class Vehicle{
     private boolean isWashed;
     private VehicleSize vehicleSize;
-
     public Vehicle(boolean isWashed, VehicleSize vehicleSize) {
         this.isWashed = isWashed;
         this.vehicleSize = vehicleSize;

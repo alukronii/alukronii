@@ -4,7 +4,6 @@ public class VehicleSize {
     private double width;
     private double height;
     private double length;
-
     public VehicleSize(double length, double height, double width) {
         this.length = length;
         this.height = height;

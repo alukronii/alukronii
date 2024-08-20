@@ -3,7 +3,6 @@ package com.alukronii.homework.homework4.flyable;
 public class Airplane implements FlyableInterface {
 
     private int countPassengers;
-
     public Airplane(int countPassengers) {
         this.countPassengers = countPassengers;
     }

@@ -6,15 +6,6 @@ import com.alukronii.homework.homework4.national_geographic.alive.herbivorous.Ra
 import com.alukronii.homework.homework4.national_geographic.alive.predator.Tiger;
 import com.alukronii.homework.homework4.national_geographic.alive.predator.Wolf;
 
-//Создать отдельный пакет и Runner. В Runner:
-//1.Создать Тигра(300 кг), Волка(50 кг), кролика(2 кг), Слона (2000 кг)
-//2.Кролик должен пробежать
-//3.Волк ест кролика
-//4.Тигр ест волка
-//5.Тигр пытается съесть слона
-//6.Слон пробегает
-//7.Вызвать у съеденного кролика бег, сделать так, чтобы программа НЕ закончилась с ошибкой,
-//а распечатала текст ошибки.
 public class Runner {
     public static void main(String[] args) {
         Tiger tiger = new Tiger(300);
@@ -61,6 +52,5 @@ public class Runner {
         } catch (DeadException e) {
             System.out.println(e.getMessage() + " Кролик съеден и поэтому не может бежать.");
         }
-
     }
 }
