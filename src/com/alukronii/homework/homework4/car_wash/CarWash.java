@@ -17,17 +17,17 @@ public class CarWash {
         this.washPrice = washPrice;
     }
 
-    public String washCar(Vehicle[] vehicle) {
+    public String washCar(Vehicle[] vehicles) {
         washPrice = 0;
-        vehicleCount = vehicle.length;
-        for (Vehicle v : vehicle) {
-            if (!v.isWashed()) {
-                if (v.getVehicleSize().getLength() > 6 && v.getVehicleSize().getHeight() > 2.5 && v.getVehicleSize().getWidth() > 2) {
+        vehicleCount = vehicles.length;
+        for (Vehicle vehicle : vehicles) {
+            if (!vehicle.isWashed()) {
+                if (vehicle.getVehicleSize().getLength() > 6 && vehicle.getVehicleSize().getHeight() > 2.5 && vehicle.getVehicleSize().getWidth() > 2) {
                     washPrice += 4000;
-                    v.setWashed(true);
+                    vehicle.setWashed(true);
                 } else {
                     washPrice += 2000;
-                    v.setWashed(true);
+                    vehicle.setWashed(true);
                 }
             }
         }

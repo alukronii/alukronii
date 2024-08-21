@@ -11,9 +11,9 @@ public class Runner {
     Driver driver = new Driver();
     Builder builder = new Builder();
     Bird bird = new Bird();
-    SoundableInterface[] soundable = {human, driver, builder, bird};
-        for (SoundableInterface s : soundable) {
-            System.out.println(s.makeSound());
+    SoundableInterface[] soundables = {human, driver, builder, bird};
+        for (SoundableInterface soundable : soundables) {
+            System.out.println(soundable.makeSound());
         }
     }
 }
