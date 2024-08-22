@@ -7,28 +7,13 @@ public class Runner {
         Airplane airplane1 = new Airplane(10);
         Airplane airplane2 = new Airplane(-1);
 
-        try {
-            duck1.fly();
-        } catch (FlyException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            duck2.fly();
-        } catch (FlyException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            airplane1.fly();
-        } catch (FlyException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            airplane2.fly();
-        } catch (FlyException e) {
-            System.out.println(e.getMessage());
+        FlyableInterface[] flyableInterfaces = {duck1, duck2, airplane1, airplane2};
+        for (FlyableInterface flyableInterface : flyableInterfaces) {
+            try {
+                flyableInterface.fly();
+            } catch (FlyException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

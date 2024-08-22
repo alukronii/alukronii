@@ -16,6 +16,7 @@ public class Runner {
         try {
             rabbit.toRun();
             System.out.println("Кролик все еще живой, бежит по травке на встречу к волку.");
+            System.out.println("___________________________________________________");
         } catch (DeadException e) {
             System.out.println(e.getMessage());
         }
@@ -23,6 +24,7 @@ public class Runner {
         try {
             wolf.toAttack(rabbit);
             System.out.println("Волк встретил кролика и съел его из личных интересов. Теперь кролик мертв, а вес волка теперь равен " + wolf.getWeight());
+            System.out.println("___________________________________________________");
         } catch (DeadException e) {
             System.out.println(e.getMessage());
         }
@@ -30,6 +32,7 @@ public class Runner {
         try {
             tiger.toAttack(wolf);
             System.out.println("Волк потерял бдительность и попался в лапы тигра, который его в последствии его и съел. Вес тигра теперь равен " + tiger.getWeight());
+            System.out.println("___________________________________________________");
         } catch (DeadException e) {
             System.out.println(e.getMessage());
         }
@@ -43,6 +46,7 @@ public class Runner {
         try {
             elephant.toRun();
             System.out.println("Тигр вошел во вкус и решил атаковать слона. Бой был не равным и тигр погиб в этом сражении. Слон успешно покидает поле битвы.");
+            System.out.println("___________________________________________________");
         } catch (DeadException e) {
             System.out.println(e.getMessage());
         }
@@ -51,6 +55,7 @@ public class Runner {
             rabbit.toRun();
         } catch (DeadException e) {
             System.out.println(e.getMessage() + " Кролик съеден и поэтому не может бежать.");
+            System.out.println("___________________________________________________");
         }
     }
 }
